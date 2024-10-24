@@ -1,26 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whack-a-Mole!</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Whack-a-mole</title>
   </head>
   <body>
-    <h2>Your score</h2>
-    <h2 id="score">0</h2>
-    <h2>Time left</h2>
-    <h2 id="time-left">60</h2>
-    <div class="grid">
-      <div class="square" id="1"></div>
-      <div class="square" id="2"></div>
-      <div class="square" id="3"></div>
-      <div class="square" id="4"></div>
-      <div class="square" id="5"></div>
-      <div class="square" id="6"></div>
-      <div class="square" id="7"></div>
-      <div class="square" id="8"></div>
-      <div class="square" id="9"></div>
+    <!-- Pantalla de inicio -->
+    <div id="start-screen" class="start-screen">
+      <div class="rules-container">
+        <h1>Whack-a-Mole!</h1>
+        <div class="rules">
+          <h2>Reglas del juego:</h2>
+          <ul>
+            <li>Golpea al topo cada vez que aparezca</li>
+            <li>Cada golpe te da 1 punto</li>
+            <li>Tienes 60 segundos para conseguir la mayor puntuación</li>
+            <li>Puedes pausar el juego en cualquier momento</li>
+          </ul>
+        </div>
+        <button id="start-game-btn" class="start-game-btn">
+          EMPEZAR JUEGO
+        </button>
+      </div>
+    </div>
+
+    <!-- Contenedor del juego (oculto hasta que se le da inicio al juego) -->
+    <div id="game-container" class="container hidden">
+      <div class="sidebar">
+        <h2>Tu puntuación</h2>
+        <h2 id="score">0</h2>
+        <h2>Tiempo restante</h2>
+        <h2 id="time-left">60</h2>
+        <button id="btn-pause">PAUSE</button>
+        <button id="btn-exit">EXIT</button>
+      </div>
+      <div class="grid">
+        <div id="1" class="square"></div>
+        <div id="2" class="square"></div>
+        <div id="3" class="square"></div>
+        <div id="4" class="square"></div>
+        <div id="5" class="square"></div>
+        <div id="6" class="square"></div>
+        <div id="7" class="square"></div>
+        <div id="8" class="square"></div>
+        <div id="9" class="square"></div>
+      </div>
     </div>
     <script src="game.js"></script>
   </body>
