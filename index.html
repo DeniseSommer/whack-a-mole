@@ -3,12 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Whack-a-Mole</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Whack-a-mole</title>
   </head>
   <body>
-    <canvas id="canvas" width="800" height="600"></canvas>
-    <script src="js/mole.js"></script>
-    <script src="js/game.js"></script>
+    <h2>Your score</h2>
+    <h2 id="score">0</h2>
+    <h2>Time left</h2>
+    <h2 id="time-left">60</h2>
+    <div class="grid">
+      <div class="square" id="1"></div>
+      <div class="square" id="2"></div>
+      <div class="square" id="3"></div>
+      <div class="square" id="4"></div>
+      <div class="square" id="5"></div>
+      <div class="square" id="6"></div>
+      <div class="square" id="7"></div>
+      <div class="square" id="8"></div>
+      <div class="square" id="9"></div>
+    </div>
+    <script src="game.js"></script>
   </body>
 </html>
