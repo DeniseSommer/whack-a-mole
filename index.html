@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whack-a-Mole!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Pantalla de inicio -->
+    <div id="start-screen" class="start-screen">
+      <div class="rules-container">
+        <h1>Whack-a-Mole!</h1>
+        <div class="rules">
+          <h2>Reglas del juego:</h2>
+          <ul>
+            <li>Golpea al topo cada vez que aparezca</li>
+            <li>Cada golpe te da 1 punto</li>
+            <li>Tienes 60 segundos para conseguir la mayor puntuación</li>
+            <li>Cada 10 segundos cambiará la velocidad</li>
+            <li>Si dejas pasar 10 topos, ¡pierdes el juego!</li>
+            <li>Puedes pausar el juego en cualquier momento</li>
+          </ul>
+        </div>
+        <button id="start-game-btn" class="start-game-btn" type="button">
+          COMENZAR
+        </button>
+      </div>
+    </div>
+
+    <!-- Pantalla del juego -->
+    <div id="game-container" class="container hidden">
+      <div class="sidebar">
+        <h2>Tu puntuación</h2>
+        <div id="score">0</div>
+
+        <h2>Tiempo restante</h2>
+        <div id="time-left">60</div>
+
+        <h2>Topos perdidos</h2>
+        <div id="missed-moles">0</div>
+
+        <button id="btn-pause">PAUSAR</button>
+        <button id="btn-exit">SALIR</button>
+      </div>
+
+      <div class="grid">
+        <div id="1" class="square"></div>
+        <div id="2" class="square"></div>
+        <div id="3" class="square"></div>
+        <div id="4" class="square"></div>
+        <div id="5" class="square"></div>
+        <div id="6" class="square"></div>
+        <div id="7" class="square"></div>
+        <div id="8" class="square"></div>
+        <div id="9" class="square"></div>
+      </div>
+    </div>
+
+    <!-- Pantallad de Game over-->
+    <div id="game-over-screen" class="game-over-screen hidden">
+      <div class="game-over-container">
+        <h1>GAME OVER!</h1>
+        <div class="stats-container">
+          <h2>Puntuación:</h2>
+          <div id="final-score">0</div>
+
+          <h2>Topos golpeados:</h2>
+          <div id="hits">0</div>
+
+          <h2>Topos perdidos:</h2>
+          <div id="final-missed">0</div>
+        </div>
+        <button id="play-again-btn">JUGAR DE NUEVO</button>
+      </div>
+    </div>
+
+    <script src="game-interface-test.js"></script>
+    <script src="game-test.js"></script>
+  </body>
+</html>

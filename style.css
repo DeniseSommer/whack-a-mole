@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Press Start 2P", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Pantalla de inicio */
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.rules-container {
+  background-color: #000;
+  border: 4px solid #fff;
+  padding: 32px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+}
+
+.rules-container h1 {
+  color: #0ff;
+  font-size: 32px;
+  margin-bottom: 32px;
+  text-shadow: 3px 3px #000;
+}
+
+.rules {
+  text-align: left;
+  margin: 32px 0;
+  border: 2px solid #0ff;
+  padding: 24px;
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+.rules h2 {
+  color: #0f0;
+  margin-bottom: 24px;
+  font-size: 19.2px;
+}
+
+.rules ul {
+  list-style-type: none;
+  padding-left: 16px;
+}
+
+.rules li {
+  margin: 16px 0;
+  font-size: 12.8px;
+  color: #fff;
+}
+
+.rules li::before {
+  content: ">";
+  color: #0f0;
+  margin-right: 10px;
+}
+
+/* Contenedor del juego */
+.container {
+  display: flex;
+  height: 90vh;
+  width: 90vw;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  border: 4px solid #fff;
+  padding: 32px;
+  background-color: #000;
+  box-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #000;
+  border: 3px solid #0ff;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  height: 60vmin;
+  width: 180px;
+}
+
+.sidebar h2 {
+  font-size: 12px;
+  color: #0ff;
+  text-align: center;
+  margin: 0;
+}
+
+#score,
+#time-left,
+#missed-moles {
+  color: #0f0;
+  font-size: 24px;
+  margin: 4px 0 12px 0;
+}
+
+/* Grid y cuadrados */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+  width: 60vmin;
+  height: 60vmin;
+  background-color: #000;
+  padding: 16px;
+  border: 3px solid #0ff;
+}
+
+.square {
+  background-color: #111;
+  border: 2px solid #0ff;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.square:hover {
+  background-color: #222;
+  box-shadow: 0 0 5px #0ff;
+}
+
+.mole {
+  background-image: url("assets/mole.png");
+  background-size: cover;
+  background-position: center;
+  border-color: #0f0;
+  box-shadow: 0 0 10px #0f0;
+}
+
+/* Botones */
+button {
+  font-family: "Press Start 2P", cursive;
+  padding: 12px 24px;
+  border: 3px solid #fff;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  font-size: 11px;
+  width: 100%;
+  max-width: 180px;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+}
+
+.start-game-btn {
+  background-color: #0f0;
+  color: #000;
+  border-color: #0f0;
+  margin-top: 32px;
+}
+
+.start-game-btn:hover {
+  background-color: #000;
+  color: #0f0;
+  box-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+}
+
+#btn-pause {
+  background-color: #ff0;
+  color: #000;
+  border-color: #ff0;
+}
+
+#btn-pause:hover {
+  background-color: #000;
+  color: #ff0;
+  box-shadow: 0 0 10px #ff0;
+}
+
+#btn-exit {
+  background-color: #f00;
+  color: #000;
+  border-color: #f00;
+}
+
+#btn-exit:hover {
+  background-color: #000;
+  color: #f00;
+  box-shadow: 0 0 10px #f00;
+}
+
+/* Contenido oculto */
+.hidden {
+  display: none !important;
+}
+
+/* Contenedor de Game Over */
+.game-over-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.game-over-container {
+  background-color: #000;
+  border: 4px solid #f00;
+  padding: 32px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 10px #f00, 0 0 20px #f00;
+}
+
+.game-over-container h1 {
+  color: #f00;
+  font-size: 32px;
+  margin-bottom: 32px;
+  text-shadow: 3px 3px #000;
+}
+
+.stats-container {
+  text-align: center;
+  margin: 32px 0;
+  border: 2px solid #f00;
+  padding: 24px;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.stats-container h2 {
+  color: #0ff;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+#final-score,
+#hits,
+#final-missed {
+  color: #0f0;
+  font-size: 24px;
+  margin: 8px 0 24px 0;
+}
