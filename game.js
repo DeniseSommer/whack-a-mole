@@ -17,12 +17,12 @@ class Game {
     this.activeMolePosition = null;
     this.gameCountdown = null;
     this.molePosition = null;
-    this.speedLevels = [1500, 1200, 900, 700, 500, 300];
+    this.speedLevels = [1000, 900, 800, 700, 600, 500];
     this.currentSpeedIndex = 0;
     this.speedUpdateInterval = null;
   }
 
-  // COnfiguro los listeners de la interfaz
+  // Configuro los listeners de la interfaz
   initializeEvents() {
     // Botón de inicio para comenzar el juego
     this.interface.startGameButton.addEventListener("click", () => {
@@ -157,7 +157,7 @@ class Game {
     }, 10000);
   }
 
-  // Estsblezco la posición random del topo
+  // Establezco la posición random del topo
   placeMoleRandomly() {
     this.activeMolePosition = this.interface.placeMoleRandomly();
   }
