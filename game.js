@@ -34,7 +34,7 @@ class Game {
       square.addEventListener("click", () => {
         if (
           this.isGameStarted &&
-          !this.isGamePaused &&
+          this.isGamePaused === false &&
           square.id === this.activeMolePosition
         ) {
           this.currentScore++;
@@ -68,7 +68,7 @@ class Game {
 
   // Comienzo el juego, su temoporiador y los marcadores
   startGame() {
-    if (!this.isGameStarted) {
+    if (this.isGameStarted === false) {
       this.interface.showGameScreen();
       this.isGameStarted = true;
       this.currentSpeedIndex = 0;

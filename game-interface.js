@@ -37,7 +37,7 @@ class GameInterface {
   // Actualizo los contadores de tiempo, puntuación y topos perdidos
   updateDisplay(timeLeft, score, missedMoles) {
     this.timeLeftDisplay.textContent = timeLeft;
-    this.scoreDisplay.textContent = score;
+    this.scoreDisplay.textContent = score * 50;
     this.missedMolesDisplay.textContent = missedMoles;
   }
 
@@ -73,7 +73,7 @@ class GameInterface {
   showGameOverScreen(score, missedMoles) {
     this.gameContainer.classList.add("hidden");
     this.startScreen.classList.add("hidden");
-    this.finalScoreDisplay.textContent = score;
+    this.finalScoreDisplay.textContent = score * 50;
     this.hitsDisplay.textContent = score;
     this.finalMissedDisplay.textContent = missedMoles;
     this.gameOverScreen.classList.remove("hidden");
