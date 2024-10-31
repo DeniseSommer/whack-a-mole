@@ -16,6 +16,14 @@ class GameInterface {
     this.hitsDisplay = document.getElementById("hits");
     this.finalMissedDisplay = document.getElementById("final-missed");
 
+    // Sonido de golpear al topo
+    this.hitSound = new Audio("assets/hit_sound.wav");
+    this.hitSound.volume = 1;
+
+    // Sonido de click en botones
+    this.clickSound = new Audio("assets/click_sound.wav");
+    this.clickSound.volume = 1;
+
     // Inicializo las pantallas en el estado correcto
     this.initializeScreens();
   }
@@ -82,5 +90,16 @@ class GameInterface {
   // Oculto la pantalla de Game Over
   hideGameOverScreen() {
     this.gameOverScreen.classList.add("hidden");
+  }
+
+  // Sonidos cuando golpeo al topo o hago click en los botones
+  playHitSound() {
+    this.hitSound.currentTime = 0;
+    this.hitSound.play();
+  }
+
+  playClickSound() {
+    this.clickSound.currentTime = 0;
+    this.clickSound.play();
   }
 }

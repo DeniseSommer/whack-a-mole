@@ -26,6 +26,7 @@ class Game {
   initializeEvents() {
     // Botón de inicio para comenzar el juego
     this.interface.startGameButton.addEventListener("click", () => {
+      this.interface.playClickSound();
       this.startGame();
     });
 
@@ -37,6 +38,7 @@ class Game {
           this.isGamePaused === false &&
           square.id === this.activeMolePosition
         ) {
+          this.interface.playHitSound();
           this.currentScore++;
           this.interface.updateDisplay(
             this.timeLeft,
@@ -53,17 +55,22 @@ class Game {
     document
       .querySelector("#game-over-screen button")
       .addEventListener("click", () => {
+        this.interface.playClickSound();
         this.interface.hideGameOverScreen();
         this.exitGame();
       });
 
     // Botón pausar el juego
-    this.interface.pauseButton.addEventListener("click", () =>
-      this.pauseGame()
-    );
+    this.interface.pauseButton.addEventListener("click", () => {
+      this.interface.playClickSound();
+      this.pauseGame();
+    });
 
     // Botón salir del juego
-    this.interface.exitButton.addEventListener("click", () => this.exitGame());
+    this.interface.exitButton.addEventListener("click", () => {
+      this.interface.playClickSound();
+      this.exitGame();
+    });
   }
 
   // Comienzo el juego, su temoporiador y los marcadores
