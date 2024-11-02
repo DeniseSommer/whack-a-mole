@@ -137,6 +137,7 @@ html {
   width: 100%;
   height: 100%;
   transition: all 0.2s;
+  /* Cambio el cursor a la imagen  hammer.png */
   cursor: url("assets/hammer.png"), auto;
 }
 

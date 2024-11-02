@@ -26,7 +26,7 @@ class Game {
   initializeEvents() {
     // Botón de inicio para comenzar el juego
     this.interface.startGameButton.addEventListener("click", () => {
-      this.interface.playClickSound();
+      this.interface.playStartSound();
       this.startGame();
     });
 
@@ -185,6 +185,7 @@ class Game {
 
   // Manejo el fin del juego
   endGame() {
+    this.interface.playGameOverSound();
     this.isGameStarted = false;
     this.stopTimers();
     this.interface.showGameOverScreen(this.currentScore, this.missedMoles);

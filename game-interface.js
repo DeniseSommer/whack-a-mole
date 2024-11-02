@@ -16,13 +16,21 @@ class GameInterface {
     this.hitsDisplay = document.getElementById("hits");
     this.finalMissedDisplay = document.getElementById("final-missed");
 
+    // Sonido de iniciar el juego
+    this.startSound = new Audio("assets/play_sound.wav");
+    this.startSound.volume = 1;
+
     // Sonido de golpear al topo
-    this.hitSound = new Audio("assets/hit_sound.wav");
+    this.hitSound = new Audio("assets/hitting_mole_sound.wav");
     this.hitSound.volume = 1;
 
     // Sonido de click en botones
     this.clickSound = new Audio("assets/click_sound.wav");
     this.clickSound.volume = 1;
+
+    // Sonido de game over
+    this.gameOverSound = new Audio("assets/game_over_sound.wav");
+    this.gameOverSound.volume = 1;
 
     // Inicializo las pantallas en el estado correcto
     this.initializeScreens();
@@ -92,7 +100,12 @@ class GameInterface {
     this.gameOverScreen.classList.add("hidden");
   }
 
-  // Sonidos cuando golpeo al topo o hago click en los botones
+  // Sonidos cargados desde el inicio
+  playStartSound() {
+    this.startSound.currentTime = 0;
+    this.startSound.play();
+  }
+
   playHitSound() {
     this.hitSound.currentTime = 0;
     this.hitSound.play();
@@ -101,5 +114,10 @@ class GameInterface {
   playClickSound() {
     this.clickSound.currentTime = 0;
     this.clickSound.play();
+  }
+
+  playGameOverSound() {
+    this.gameOverSound.currentTime = 0;
+    this.gameOverSound.play();
   }
 }
