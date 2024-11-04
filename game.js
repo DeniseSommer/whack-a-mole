@@ -18,8 +18,8 @@ class Game {
     this.gameCountdown = null;
     this.molePosition = null;
     this.speedLevels = [1000, 900, 800, 700, 600, 500];
-    this.currentSpeedIndex = 0;
-    this.speedUpdateInterval = null;
+    this.currentSpeed = 0;
+    this.speedUpdate = null;
   }
 
   // Configuro los listeners de la interfaz
@@ -78,7 +78,7 @@ class Game {
     if (this.isGameStarted === false) {
       this.interface.showGameScreen();
       this.isGameStarted = true;
-      this.currentSpeedIndex = 0;
+      this.currentSpeed = 0;
       this.missedMoles = 0;
       this.timeLeft = 60;
       this.currentScore = 0;
@@ -128,7 +128,7 @@ class Game {
   stopTimers() {
     clearInterval(this.gameCountdown);
     clearInterval(this.molePosition);
-    clearInterval(this.speedUpdateInterval);
+    clearInterval(this.speedUpdate);
   }
 
   // Manejo el movimiento de los topos
@@ -148,16 +148,16 @@ class Game {
         }
       }
       this.placeMoleRandomly();
-    }, this.speedLevels[this.currentSpeedIndex]);
+    }, this.speedLevels[this.currentSpeed]);
   }
 
   startSpeedProgression() {
-    this.speedUpdateInterval = setInterval(() => {
+    this.speedUpdate = setInterval(() => {
       if (
         !this.isGamePaused &&
-        this.currentSpeedIndex < this.speedLevels.length - 1
+        this.currentSpeed < this.speedLevels.length - 1
       ) {
-        this.currentSpeedIndex++;
+        this.currentSpeed++;
         clearInterval(this.molePosition);
         this.moveMole();
       }
